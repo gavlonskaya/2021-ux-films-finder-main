@@ -1,0 +1,30 @@
+<ff-title-films-list [genre]="genre"></ff-title-films-list>
+<div class="category center-content">
+  <ff-loader *ngIf="loading"></ff-loader>
+
+  <div class="category__card-list">
+    <ng-container *ngFor="let film of (films$ | async)?.items">
+      <a
+        class="category__card-link"
+        routerLink="/details/{{ film.kinopoiskId }}"
+      >
+        <ff-card
+          class="category__card"
+          [name]="film.nameRu || film.nameOriginal"
+          [rating]="film.ratingImdb"
+          [url]="film.posterUrlPreview"
+        >
+        </ff-card>
+      </a>
+    </ng-container>
+  </div>
+
+  <mat-paginator
+    *ngIf="(films$ | async)?.total as total"
+    class="category__paginator"
+    [length]="(films$ | async)?.total"
+    [pageSize]="pageSize"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</div>

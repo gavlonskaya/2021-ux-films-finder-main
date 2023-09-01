@@ -1,0 +1,203 @@
+@import '../../../assets/styles/themes/base/common/shared';
+.person {
+  font-size: 20px;
+  line-height: 32px;
+  padding: 40px;
+  &__title {
+    line-height: 42px;
+    color: @color-gray-1b;
+    margin: 32px 0 8px 0;
+  }
+  &__photo {
+    display: flex;
+    justify-content: center;
+    width: 420px;
+    height: 500px;
+    background-color: @color-black-00;
+    margin: 16px 32px 0 0;
+    border-radius: 16px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25),
+      1px -1px 8px rgba(0, 0, 0, 0.25);
+  }
+  &__img {
+    width: 335px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__icon-title {
+    font-size: 40px;
+    line-height: 56px;
+    margin-left: 8px;
+    &._female {
+      color: @color-pink-cb;
+    }
+    &._male {
+      color: @color-blue-27;
+    }
+  }
+  &__name {
+    display: flex;
+    justify-content: left;
+    font-size: 36px;
+    line-height: 56px;
+    margin-bottom: 8px;
+  }
+  &__name-en {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  &__data {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    white-space: nowrap;
+    margin-bottom: 24px;
+  }
+  &__label-title {
+    font-size: 20px;
+    line-height: 42px;
+    color: @color-gray-1b;
+    margin-right: 160px;
+  }
+
+  &__label-info {
+    font-size: 22px;
+    line-height: 42px;
+  }
+  &__birthplace {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: row;
+  }
+  &__gender-and-name {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    margin-top: 88px;
+  }
+  &__name-en {
+    margin-bottom: 72px;
+  }
+
+  &__death {
+    margin-top: 24px;
+  }
+  &__profession {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+  &__profession-title {
+    color: @color-gray-42;
+  }
+
+  &__stripe {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    background: @color-gray-0E;
+    right: 0px;
+    top: 158px;
+    width: 100%;
+    height: 160px;
+    z-index: -1;
+    &:after,
+    &:before {
+      content: '';
+      display: flex;
+      width: 73px;
+      height: 100%;
+      background: url('../../../assets/images/triangles.svg') no-repeat;
+    }
+    &:before {
+      transform: rotate(0.5turn);
+    }
+  }
+
+  &__relation {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 16px;
+  }
+
+  &__rating-empty {
+    display: flex;
+    flex-direction: row;
+    width: 71px;
+    height: 32px;
+  }
+  &__rating {
+    width: 55px;
+    height: 32px;
+    background: @color-gray-0E;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 16px;
+  }
+  &__film {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 32px;
+    white-space: nowrap;
+  }
+  &__rating-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-right: 32px;
+    margin-top: 8px;
+  }
+  &__icon-and-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-right: 16px;
+  }
+  a:hover,
+  a:active,
+  a:focus {
+    color: @color-green-04;
+  }
+}
+@media only screen and (max-width: 1275px) {
+  .person {
+    font-size: 16px;
+    line-height: 24px;
+    &__details {
+      display: flex;
+      flex-direction: column;
+      margin: 8px;
+      width: 100%;
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 42px;
+    }
+
+    &__data {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 8px;
+    }
+  }
+}
+.theme-dark {
+  & .person {
+    &__stripe {
+      background-color: @color-gray-1b;
+    }
+    &__label-title,
+    &__title {
+      color: @color-gray-ac;
+    }
+  }
+}
